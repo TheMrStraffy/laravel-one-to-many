@@ -18,6 +18,17 @@
           </div>
 
           <div class="mb-3">
+            <select class="form-control" name="type_id" id="type_id">
+                <option value="">Choose Type</option>
+                @foreach ($types as $type)
+                    <option
+                    @if ($type->id == old('type_id', $project->type?->id))  selected  @endif
+                    value="{{$type->id}}">{{$type->name}}</option>
+                @endforeach
+            </select>
+          </div>
+
+          <div class="mb-3">
             <label for="summary" class="form-label">Summary</label>
             <textarea
             class="form-control" name="summary" id="summary" >{{old('summary', $project->summary)}}</textarea>

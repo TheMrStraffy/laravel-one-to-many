@@ -20,7 +20,7 @@
             <select class="form-control" name="type_id" id="type_id">
                 <option selected value="">Choose Type</option>
                 @foreach ($types as $type)
-                    <option value="{{$type->id}}">{{$type->name}}</option>
+                    <option value="{{$type->id}}">{{$type->name}}"></option>
                 @endforeach
             </select>
           </div>
