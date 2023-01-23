@@ -29,7 +29,7 @@
        @include('admin.partials.header')
 
         <main class="d-flex row w-100">
-            <div class="aside-menu col-2 bg-dark">
+            <div class="aside-menu col-2 bg-dark p-3">
                 <ul>
                     @guest
                     <li class="nav-item">
@@ -41,10 +41,10 @@
                     </li>
                     @endif
                     @else
-                    <li>
+                    <li class="nav-item">
                         <a class="text-white" href="{{route('admin.project.create')}}"><i class="fa-regular fa-file"></i> New Project</a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a class="text-white" href="{{route('admin.types.index')}}">Projects grouped by Type</a>
                     </li>
                     @endguest
