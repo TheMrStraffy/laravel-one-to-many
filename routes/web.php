@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +24,9 @@ Route::middleware(['auth', 'verified'])
 ->name('admin.')
 ->prefix('admin')
 ->group(function(){
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('project', ProjectController::class);
+    Route::resource('types', TypeController::class)->except(['show','create','edit']);
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/orderby/{column}/{direction}', [ProjectController::class, 'orderby']);
 });
 

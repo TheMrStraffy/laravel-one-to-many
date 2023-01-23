@@ -15,6 +15,7 @@
           <p class="card-title">{{$project->type?->name}}</p>
           <p class="card-text ">{{$project->summary}}</p>
           <a href="{{route('admin.project.index')}}" class="btn btn-primary mb-2">Go To Projects</a>
+          <a href="{{route('admin.types.index')}}" class="btn btn-info mb-2">Go To Group List</a>
 
           <form onsubmit="return confirm('Confermi l\'eliminazione di: {{$project->name}}?')"
           action="{{route('admin.project.destroy', $project)}}" method="POST">

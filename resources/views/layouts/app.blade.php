@@ -44,6 +44,9 @@
                     <li>
                         <a class="text-white" href="{{route('admin.project.create')}}"><i class="fa-regular fa-file"></i> New Project</a>
                     </li>
+                    <li>
+                        <a class="text-white" href="{{route('admin.types.index')}}">Projects grouped by Type</a>
+                    </li>
                     @endguest
                 </ul>
             </div>

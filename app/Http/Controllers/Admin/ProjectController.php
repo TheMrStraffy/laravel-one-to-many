@@ -19,6 +19,7 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         if(isset($_GET['search'])){
@@ -30,6 +31,8 @@ class ProjectController extends Controller
         }
         return view('admin.project.index',compact('projects'));
     }
+
+
     public function orderby(){
         $direction= 'desc' ? 'asc' : 'desc';
 
