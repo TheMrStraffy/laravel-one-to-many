@@ -9,10 +9,13 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">
+           <a href="">#</a>
+        </th>
+        <th scope="col">Project Name</th>
+        <th scope="col">Client Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -22,15 +25,20 @@
           <td>{{$project->id}}</td>
           <td>{{$project->name}}</td>
           <td>{{$project->client_name}}</td>
-          <td>
-            <a href="{{route('admin.project.show', $project)}}" class="btn btn-primary mb-2">More Info</a>
-            <a href="{{route('admin.project.edit', $project)}}" class="btn btn-info mb-2">Edit Project</a>
+          <td>{{$project->type?->name}}</td>
+          <td class="d-flex">
+            <a href="{{route('admin.project.show', $project)}}" class="btn btn-primary me-2">
+                <i class="fa-solid fa-circle-info"></i>
+            </a>
+            <a href="{{route('admin.project.edit', $project)}}" class="btn btn-info me-2">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </a>
 
             <form onsubmit="return confirm('Confermi l\'eliminazione di: {{$project->name}}?')"
               action="{{route('admin.project.destroy', $project)}}" method="POST">
               @csrf
               @method('DELETE')
-              <button class="btn btn-danger" type="submit" title="delete">Delete</button>
+              <button class="btn btn-danger" type="submit" title="delete"><i class="fa-solid fa-delete-left"></i></button>
               </form>
           </td>
         </tr>

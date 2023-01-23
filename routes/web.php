@@ -25,11 +25,6 @@ Route::middleware(['auth', 'verified'])
 ->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('project', ProjectController::class);
-    Route::get('/index', [ProjectController::class, 'index']);
-    Route::get('/show/{$id}', [ProjectController::class, 'show']);
-    Route::post('/create', [ProjectController::class, 'create']);
-    Route::get('/edit/{$id}', [ProjectController::class, 'edit']);
-    Route::delete('/destroy/{$id}', [ProjectController::class, 'destroy']);
     Route::get('/orderby/{column}/{direction}', [ProjectController::class, 'orderby']);
 });
 
