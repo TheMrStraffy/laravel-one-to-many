@@ -1,0 +1,10 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+main{
+    height: calc(100vh - 56px);
+}
+.ck-editor__editable[role="textbox"] {
+    /* editing area */
+    min-height: 300px;
+}
