@@ -12,6 +12,7 @@
         <div class="card-body overflow-y-scroll ">
           <h5 class="card-title">{{$project->name}}</h5>
           <p class="card-title">{{$project->client_name}}</p>
+          <p class="card-title">{{$project->type?->name}}</p>
           <p class="card-text ">{{$project->summary}}</p>
           <a href="{{route('admin.project.index')}}" class="btn btn-primary mb-2">Go To Projects</a>
 
